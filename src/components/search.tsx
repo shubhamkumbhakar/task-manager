@@ -25,7 +25,7 @@ export default function Search({ searchQuery, onSearch }: SearchProps) {
     return () => {
       clearTimeout(timerId);
     };
-  }, [query]);
+  }, [query, onSearch]);
 
   return (
     <div className="flex items-center w-full max-w-md mx-auto bg-white rounded-md shadow-md border border-gray-300">

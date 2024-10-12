@@ -1,3 +1,3 @@
 ## Storing due date without timezone
 
-For saving the due date time, I am using datetime-local input which does not store timezone info, Hence assuming users will not switch timezones in this case.
+Assuming users will not switch timezones in this case, so for saving the due date time, I am using datetime-local input which does not store timezone data.
