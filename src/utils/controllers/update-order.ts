@@ -1,6 +1,7 @@
 import { LOCAL_STORAGE_KEY } from "../constants";
 import { Task } from "../interfaces";
+import { browserLocalStorage } from "./get-tasks";
 
 export const updateOrderOfTasks = (tasks: Task[]) => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+  browserLocalStorage?.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
 };

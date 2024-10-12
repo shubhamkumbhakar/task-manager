@@ -1,8 +1,9 @@
 import { LOCAL_STORAGE_KEY } from "../constants";
 import { Task } from "../interfaces";
+import { browserLocalStorage } from "./get-tasks";
 
 export const updateTask = (taskId: number, task: Task) => {
-  const storedTasks = localStorage.getItem(LOCAL_STORAGE_KEY);
+  const storedTasks = browserLocalStorage?.getItem(LOCAL_STORAGE_KEY);
   if (storedTasks) {
     const newTasks = JSON.parse(storedTasks);
 
@@ -13,6 +14,6 @@ export const updateTask = (taskId: number, task: Task) => {
       newTasks[updateTaskIndex] = task;
     }
 
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
+    browserLocalStorage?.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
   }
 };
