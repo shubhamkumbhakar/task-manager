@@ -222,6 +222,7 @@ const TaskDashboard = () => {
           onCancel={() => {
             setShowTaskFormModal(false);
           }}
+          type={editingTask ? "update" : "create"}
         />
       </Modal>
 

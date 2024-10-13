@@ -54,11 +54,13 @@ const TaskForm = ({
   onChange,
   onSubmit,
   onCancel,
+  type,
 }: {
   task: Task;
   onChange: (e: any) => void;
   onSubmit: (e: any) => void;
   onCancel: (e: any) => void;
+  type: "create" | "update";
 }) => {
   const [formData, setFormData] = useState<Task>(task);
   const [errors, setErrors] = useState<FormDataError>({});
@@ -113,7 +115,7 @@ const TaskForm = ({
   return (
     <div className="bg-white p-2 rounded-lg shadow-sm">
       <h2 className="text-xl font-semibold mb-6 text-black">
-        {task ? "Edit Task" : "Create New Task"}
+        {type === "update" ? "Edit Task" : "Create New Task"}
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -173,7 +175,7 @@ const TaskForm = ({
 
         <div className="flex space-x-4 pt-4">
           <Button type="submit" variant="primary" onClick={handleSubmit}>
-            {task ? "Update Task" : "Create Task"}
+            {type === "update" ? "Update Task" : "Create Task"}
           </Button>
           <Button type="button" variant="secondary" onClick={onCancel}>
             Cancel
